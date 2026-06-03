@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ConnectIQ — Student Outreach Assistant</title>
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="app-layout">
+    
+    <!-- 1. Left Sidebar Navigation -->
+    <aside id="sidebar">
+      <div class="brand-section">
+        <div class="brand-logo">C</div>
+        <span class="brand-name">ConnectIQ</span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-link active" data-view="dashboard">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"></rect><rect x="14" y="3" width="7" height="5"></rect><rect x="14" y="12" width="7" height="9"></rect><rect x="3" y="16" width="7" height="5"></rect></svg>
+          <span>Dashboard</span>
+        </div>
+        <div class="nav-link" data-view="search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Recruiter Search</span>
+        </div>
+        <div class="nav-link" data-view="generator">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+          <span>AI Generator</span>
+        </div>
+        <div class="nav-link" data-view="tracker">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+          <span>Kanban Tracker</span>
+        </div>
+        <div class="nav-link" data-view="analytics">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+          <span>Analytics</span>
+        </div>
+      </nav>
+
+      <!-- Sidebar User Widget -->
+      <div class="sidebar-profile" id="sidebar-profile-btn">
+        <div class="avatar" id="sidebar-avatar">SC</div>
+        <div class="profile-info">
+          <span class="profile-name" id="sidebar-name">Sarah Chen</span>
+          <span class="profile-status">Edit Resume Profile</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- 2. Main Content Layout -->
+    <main id="main-container">
+      
+      <!-- Top header layout -->
+      <header id="top-header">
+        <div class="header-actions">
+          <button class="menu-toggle" id="menu-toggle-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+          <div class="view-title-container">
+            <h2 id="view-title-label">Dashboard</h2>
+          </div>
+        </div>
+        <div class="header-actions">
+          <button class="btn btn-secondary" id="global-profile-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            Edit Profile
+          </button>
+          <button class="btn btn-primary" id="add-recruiter-direct-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            Add Recruiter
+          </button>
+        </div>
+      </header>
+
+      <!-- 3. Dynamic Switchable Screen Views -->
+      
+      <!-- View 1: Dashboard -->
+      <div id="dashboard-view" class="view-content active">
+        <div class="dashboard-grid">
+          
+          <div class="dashboard-main">
+            <!-- Hero banner CTA -->
+            <div class="card hero-card">
+              <h1>Welcome back, <span id="hero-welcome-name">Sarah</span>!</h1>
+              <p>Keep your networking engine running. Personalize connection requests, drag profiles through the pipeline, and lock in your interviews.</p>
+              <div>
+                <button class="btn btn-primary" id="dashboard-cta-btn">Discover Recruiters</button>
+              </div>
+            </div>
+
+            <!-- Metric Row -->
+            <div class="metric-row">
+              <div class="card metric-card">
+                <span class="metric-label">Total Contacted</span>
+                <span class="metric-value" id="dashboard-stat-contacted">0</span>
+                <span class="metric-trend trend-positive">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                  <span>+12% this week</span>
+                </span>
+              </div>
+              <div class="card metric-card">
+                <span class="metric-label">Response Rate</span>
+                <span class="metric-value" id="dashboard-stat-rate">0%</span>
+                <span class="metric-trend trend-positive">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                  <span>+4.2% since start</span>
+                </span>
+              </div>
+              <div class="card metric-card">
+                <span class="metric-label">Interviews Booked</span>
+                <span class="metric-value" id="dashboard-stat-interviews">0</span>
+                <span class="metric-trend trend-flat">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                  <span>Active pipeline</span>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right hand Overdue alerts sidebar -->
+          <div class="dashboard-sidebar">
+            <div class="card followups-card">
+              <div class="card-header-row">
+                <h3 class="card-title">Follow-ups Due</h3>
+                <span class="badge" id="followup-alert-count" style="background-color: var(--color-warning-bg); color: var(--color-warning);">0</span>
+              </div>
+              <div class="followups-list" id="dashboard-followups-list">
+                <!-- Javascript will inject list of recruiters here -->
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- View 2: Recruiter Search -->
+      <div id="search-view" class="view-content">
+        <div class="search-controls">
+          <input type="text" id="search-input" class="form-control" placeholder="Search by name, title, or company...">
+          <select id="filter-industry" class="form-control">
+            <option value="">All Industries</option>
+            <option value="Tech">Tech</option>
+            <option value="Finance">Finance</option>
+            <option value="Consulting">Consulting</option>
+          </select>
+          <select id="filter-location" class="form-control">
+            <option value="">All Locations</option>
+            <option value="New York">New York</option>
+            <option value="San Francisco">San Francisco</option>
+            <option value="Remote">Remote</option>
+          </select>
+        </div>
+
+        <div class="search-grid" id="search-results-grid">
+          <!-- Javascript will inject search cards here -->
+        </div>
+      </div>
+
+      <!-- View 3: AI Message Generator -->
+      <div id="generator-view" class="view-content">
+        <div class="generator-split">
+          
+          <!-- Inputs Column -->
+          <div class="card generator-inputs">
+            <h3 class="card-title">Outreach Parameters</h3>
+            
+            <div class="form-group">
+              <label class="form-label" for="generator-recruiter-select">Recruiter Recipient</label>
+              <select id="generator-recruiter-select" class="form-control">
+                <option value="">-- Choose from Tracked Recruiters --</option>
+                <!-- JS populated -->
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Outreach Goal</label>
+              <select id="generator-goal-select" class="form-control">
+                <option value="Cold Outreach">Cold Outreach Request</option>
+                <option value="Informational Interview">Informational Interview request</option>
+                <option value="Post-Interview Follow-Up">Post-Interview Follow-Up</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Message Tone</label>
+              <div class="tone-selector-segmented">
+                <div class="tone-segment active" data-tone="conversational">Conversational</div>
+                <div class="tone-segment" data-tone="formal">Formal</div>
+                <div class="tone-segment" data-tone="direct">Direct</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="generator-context">Additional Context (Optional)</label>
+              <textarea id="generator-context" class="form-control" placeholder="Mention shared connections, specific job posts, or how you found them..."></textarea>
+            </div>
+
+            <button class="btn btn-primary" id="generator-submit-btn" style="width: 100%; height: 42px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+              Generate AI Message
+            </button>
+          </div>
+
+          <!-- Output Panel -->
+          <div class="generator-output-panel">
+            <div class="output-container" id="generator-output-box">
+              <div class="output-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                <p>Select a recruiter and parameters on the left to write your custom outreach note.</p>
+              </div>
+            </div>
+            <div class="output-controls">
+              <button class="btn btn-secondary" id="generator-copy-btn" disabled>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                Copy to Clipboard
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- View 4: Kanban Tracker -->
+      <div id="tracker-view" class="view-content">
+        <div class="kanban-board">
+          
+          <!-- Column 1: Wishlist -->
+          <div class="kanban-column" data-status="wishlist">
+            <div class="kanban-column-header">
+              <div class="column-info">
+                <span class="column-title">Wishlist</span>
+                <span class="column-count" id="count-wishlist">0</span>
+              </div>
+            </div>
+            <div class="kanban-cards-container" id="cards-wishlist"></div>
+          </div>
+
+          <!-- Column 2: Contacted -->
+          <div class="kanban-column" data-status="contacted">
+            <div class="kanban-column-header">
+              <div class="column-info">
+                <span class="column-title">Contacted</span>
+                <span class="column-count" id="count-contacted">0</span>
+              </div>
+            </div>
+            <div class="kanban-cards-container" id="cards-contacted"></div>
+          </div>
+
+          <!-- Column 3: In Discussion -->
+          <div class="kanban-column" data-status="discussion">
+            <div class="kanban-column-header">
+              <div class="column-info">
+                <span class="column-title">In Discussion</span>
+                <span class="column-count" id="count-discussion">0</span>
+              </div>
+            </div>
+            <div class="kanban-cards-container" id="cards-discussion"></div>
+          </div>
+
+          <!-- Column 4: Interview -->
+          <div class="kanban-column" data-status="interview">
+            <div class="kanban-column-header">
+              <div class="column-info">
+                <span class="column-title">Interviewing</span>
+                <span class="column-count" id="count-interview">0</span>
+              </div>
+            </div>
+            <div class="kanban-cards-container" id="cards-interview"></div>
+          </div>
+
+          <!-- Column 5: Closed -->
+          <div class="kanban-column" data-status="closed">
+            <div class="kanban-column-header">
+              <div class="column-info">
+                <span class="column-title">Closed</span>
+                <span class="column-count" id="count-closed">0</span>
+              </div>
+            </div>
+            <div class="kanban-cards-container" id="cards-closed"></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- View 5: Analytics -->
+      <div id="analytics-view" class="view-content">
+        <div class="analytics-grid">
+          
+          <!-- Chart 1: Weekly outreach volume -->
+          <div class="card analytics-card">
+            <div class="card-header-row">
+              <h3 class="card-title">Weekly Outreach Trend</h3>
+            </div>
+            <div class="chart-container">
+              <svg class="chart-svg" id="outreach-bar-chart" viewBox="0 0 400 200">
+                <!-- Rendered dynamically -->
+              </svg>
+            </div>
+          </div>
+
+          <!-- Chart 2: Pipeline status ratios -->
+          <div class="card analytics-card">
+            <div class="card-header-row">
+              <h3 class="card-title">Outreach Conversion Pipeline</h3>
+            </div>
+            <div class="chart-container" style="flex-direction: column;">
+              <svg class="chart-svg" id="pipeline-donut-chart" viewBox="0 0 200 200" style="max-height: 180px;">
+                <!-- Rendered dynamically -->
+              </svg>
+              <div class="chart-legend" id="donut-legend">
+                <!-- Populated dynamically -->
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- 4. Global Modals (Popups) -->
+
+  <!-- Profile Setup & Resume Modal -->
+  <div class="modal-overlay" id="profile-modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title">Student Profile Setup</h3>
+        <button class="modal-close" id="profile-modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="profile-onboarding-progress">
+          <div class="profile-onboarding-progress-fill" id="profile-progress-bar"></div>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label" for="profile-user-name">Your Full Name</label>
+          <input type="text" id="profile-user-name" class="form-control" value="Sarah Chen">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="profile-target-roles">Target Job Titles (Comma-separated)</label>
+          <input type="text" id="profile-target-roles" class="form-control" value="Software Engineer Intern, Entry Level Software Engineer">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="profile-resume-box">Paste Your Resume Highlights</label>
+          <textarea id="profile-resume-box" class="form-control" placeholder="Paste summaries of education, projects, languages, and internships here..."></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="profile-modal-cancel-btn">Cancel</button>
+        <button class="btn btn-primary" id="profile-modal-save-btn">Save Configuration</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Recruiter Direct Modal -->
+  <div class="modal-overlay" id="recruiter-modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title">Add Custom Recruiter</h3>
+        <button class="modal-close" id="recruiter-modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label" for="recruiter-name-input">Recruiter Full Name</label>
+          <input type="text" id="recruiter-name-input" class="form-control" placeholder="e.g., Jane Doe">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="recruiter-title-input">Recruiter Job Title</label>
+          <input type="text" id="recruiter-title-input" class="form-control" placeholder="e.g., Tech Recruiter">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="recruiter-company-input">Company Name</label>
+          <input type="text" id="recruiter-company-input" class="form-control" placeholder="e.g., Stripe">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="recruiter-industry-select">Industry</label>
+          <select id="recruiter-industry-select" class="form-control">
+            <option value="Tech">Tech</option>
+            <option value="Finance">Finance</option>
+            <option value="Consulting">Consulting</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="recruiter-location-input">Location</label>
+          <input type="text" id="recruiter-location-input" class="form-control" placeholder="e.g., New York">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="recruiter-modal-cancel-btn">Cancel</button>
+        <button class="btn btn-primary" id="recruiter-modal-save-btn">Add to Wishlist</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recruiter Detail Card / Note Modal -->
+  <div class="modal-overlay" id="detail-modal-overlay">
+    <div class="modal" style="max-width: 680px;">
+      <div class="modal-header">
+        <h3 class="modal-title" id="detail-recruiter-title">Recruiter Details</h3>
+        <button class="modal-close" id="detail-modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="detail-modal-layout">
+          
+          <!-- Left side overview and notes -->
+          <div>
+            <p id="detail-recruiter-meta" style="color: var(--text-secondary); margin-bottom: 16px;">Tech Recruiter at Stripe</p>
+            
+            <div class="form-group">
+              <label class="form-label">Add Note</label>
+              <textarea id="detail-new-note" class="form-control recruiter-note-textarea" placeholder="Record interview dates, key talking points..."></textarea>
+              <button class="btn btn-secondary btn-ghost" id="detail-save-note-btn" style="padding: 6px 12px; font-size: 12px; margin-top: 6px;">Add Note Entry</button>
+            </div>
+
+            <div class="notes-timeline" id="detail-notes-timeline">
+              <!-- JS rendered notes -->
+            </div>
+          </div>
+
+          <!-- Right side status setting -->
+          <div style="border-left: 1px solid var(--border-muted); padding-left: 20px;">
+            <div class="form-group">
+              <label class="form-label">Outreach Stage</label>
+              <select id="detail-status-select" class="form-control">
+                <option value="wishlist">Wishlist</option>
+                <option value="contacted">Contacted</option>
+                <option value="discussion">In Discussion</option>
+                <option value="interview">Interviewing</option>
+                <option value="closed">Closed</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Follow-up Reminder Date</label>
+              <input type="date" id="detail-followup-input" class="form-control">
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="detail-modal-close-action-btn">Close Details</button>
+        <button class="btn btn-danger" id="detail-delete-recruiter-btn">Delete Recruiter</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Toast Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Application Logic -->
+  <script src="app.js"></script>
+</body>
+</html>
