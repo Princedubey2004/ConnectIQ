@@ -1,62 +1,64 @@
 # ConnectIQ 🚀
 
-ConnectIQ is an AI-powered networking CRM built specifically for students and fresh graduates to help them secure internships and full-time roles. Turn cold outreach into interviews with personalized AI-generated messages, a robust Kanban pipeline to track recruiter conversations, and automated follow-up reminders.
+**ConnectIQ** is an AI-powered Networking CRM designed specifically for students and fresh graduates. It transforms the chaotic process of cold outreach into a streamlined, data-driven pipeline, helping early-career professionals secure internships and full-time roles with higher conversion rates.
 
-![ConnectIQ Dashboard](public/globe.svg)
+---
 
-## ✨ Key Features
-- **AI Outreach Generator:** Craft highly personalized cold outreach messages for LinkedIn, Email, or follow-ups based on the recruiter's background and your target role.
-- **Networking CRM:** A complete Kanban-style pipeline to track recruiters through stages (To Contact -> Contacted -> Follow Up -> Interviewing -> Offer).
-- **Analytics Dashboard:** Visualize your outreach volume, response rates, and pipeline health over time.
-- **Premium UI/UX:** A stunning, highly responsive dark mode interface powered by Tailwind CSS v4 and Framer Motion.
+## 🎯 Project Overview
+Applying through traditional job portals yields an extremely low success rate (often <2%). Referrals and direct networking increase those odds by up to 12x. However, students struggle with knowing what to say, organizing their outreach, and remembering to follow up. ConnectIQ solves this by providing intelligent message generation, pipeline management, and follow-up tracking in a single, unified interface.
 
-## 🛠 Tech Stack
-- **Framework:** [Next.js 16](https://nextjs.org/) (App Router)
-- **Database:** [MongoDB](https://www.mongodb.com/) via Mongoose
-- **Authentication:** [NextAuth.js](https://next-auth.js.org/) (Credentials)
-- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/)
-- **Animations:** [Framer Motion](https://www.framer.com/motion/)
-- **UI Components:** [shadcn/ui](https://ui.shadcn.com/)
+## ✨ Core Features
+*   **AI Message Generator**: Generates highly personalized outreach messages tailored to specific goals (Internship, Full-time, Referral) using OpenAI. Adapts tone and length dynamically.
+*   **Kanban Recruiter CRM**: A drag-and-drop pipeline interface to track recruiters across stages: *To Contact*, *Contacted*, *Follow Up*, *Interviewing*, *Offer*, and *Rejected*.
+*   **Resume Extraction (Simulated)**: Drag-and-drop resume uploading to automatically extract key skills and experiences.
+*   **Interactive Analytics Dashboard**: Visualizes pipeline health, response rates, and weekly outreach volume with dynamic charting and CSV export capabilities.
+*   **Automated Follow-ups**: Reminders logic integrated directly into the CRM to ensure no opportunity falls through the cracks.
 
-## 🚀 Getting Started Locally
+## 🛠 Tech Stack & Project Architecture
+*   **Frontend**: Next.js 16 (App Router), React 19, Tailwind CSS v4, Framer Motion v12, shadcn/ui.
+*   **Backend**: Next.js Server Actions & API Routes, NextAuth.js (Credentials).
+*   **Database**: MongoDB (Mongoose ODMs).
+*   **AI Integration**: OpenAI API (simulated/integrated via custom routes).
+*   **Deployment**: Vercel.
 
-### Prerequisites
-Make sure you have Node.js and npm installed. You will also need a MongoDB Atlas cluster URI.
+## 🚀 Installation & Setup Guide
 
-### 1. Clone the repository
+### 1. Prerequisites
+Ensure you have Node.js (v18+) and npm installed. You will also need a MongoDB Atlas Cluster and a Gemini/OpenAI API Key.
+
+### 2. Clone the Repository
 ```bash
 git clone https://github.com/Princedubey2004/ConnectIQ.git
 cd ConnectIQ
 ```
 
-### 2. Install Dependencies
+### 3. Install Dependencies
 ```bash
 npm install
 ```
 
-### 3. Environment Variables
-Create a `.env.local` file in the root directory and add the following keys:
+### 4. Configure Environment Variables
+Create a `.env.local` file in the root directory:
 ```env
-# MongoDB Connection String
 MONGODB_URI=your_mongodb_connection_string
-
-# NextAuth Configuration
-NEXTAUTH_SECRET=your_super_secret_key
+NEXTAUTH_SECRET=your_super_secret_string
 NEXTAUTH_URL=http://localhost:3000
-
-# OpenAI API Key (For message generation)
-OPENAI_API_KEY=your_openai_api_key
+GEMINI_API_KEY=your_gemini_or_openai_api_key
 ```
 
-### 4. Run the Development Server
+### 5. Run the Development Server
 ```bash
 npm run dev
 ```
+Navigate to `http://localhost:3000` to view the application.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔮 Future Roadmap
+*   **LinkedIn Chrome Extension Integration**: One-click import of recruiter profiles directly from LinkedIn.
+*   **Email Sequencing**: Automated email follow-up dispatching.
+*   **Advanced AI**: Training the model on successful past outreach to optimize response rates dynamically.
 
-## 🌐 Deployment
-This project is fully optimized for deployment on **Vercel**. Simply import the repository to Vercel, inject your environment variables, and hit Deploy!
+## 📸 Demo
+*(Include screenshots or GIFs of your dashboard, CRM, and AI generator here)*
 
-## 📄 License
-This project is licensed under the MIT License.
+---
+**Designed for scale. Built for students. 🚀**

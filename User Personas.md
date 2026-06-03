@@ -1,56 +1,33 @@
 # User Personas
+**Product:** ConnectIQ  
 
-## ConnectIQ — Student Outreach Assistant
-
----
-
-## Persona A: Sarah Chen (The Active Job-Hunting Senior)
-
-### Demographics & Background
-* **Age:** 21 years old
-* **Education:** Senior majoring in Computer Science at a state university
-* **GPA:** 3.8 / 4.0
-* **Target Role:** Entry-level Software Engineer or Software Engineering Intern
-* **Current Status:** Actively applying for jobs (100+ applications sent via portals, 3 generic replies, zero offers)
-
-### Behaviors & Workflows
-* Spends 2–3 hours daily scrolling LinkedIn job boards and tech company hiring posts.
-* Tries to find university recruiting managers or engineering leads at companies she likes.
-* Writes custom cold messages manually, taking up to 35 minutes per message, which limits her outreach scale.
-* Uses a notebook to write down who she messaged, but often forgets dates and fails to follow up.
-
-### Motivations
-* Wants to secure a full-time software engineering position before graduation to ease her anxiety.
-* Eager to apply her academic and internship knowledge to real-world production codebases.
-* Seeks a structured, repeatable system to make her job search feel manageable.
-
-### Pain Points & Hurdles
-* **Writing Anxiety:** Stares at a blank messaging screen for minutes, worried she will sound desperate, underqualified, or annoying.
-* **Low Conversion Rate:** Standard online applications disappear into "application black holes."
-* **Disorganization:** Forgets to follow up with recruiters who accepted her connection request weeks ago, letting potential opportunities go cold.
+Understanding our users is critical to building a product that solves real-world networking friction. Below are the three primary user personas for ConnectIQ.
 
 ---
 
-## Persona B: Marcus Johnson (The Proactive Sophomore)
+## 1. The Final Year Student (Primary)
+**Name:** Sarah Jenkins  
+**Profile:** 21 years old, Senior majoring in Computer Science at a state university.  
 
-### Demographics & Background
-* **Age:** 19 years old
-* **Education:** Sophomore majoring in Finance at a mid-tier liberal arts college
-* **Target Role:** Summer Investment Banking Intern (target recruiting cycle: 6–12 months in advance)
-* **Current Status:** Building his network early to secure high-priority internships for next summer
+*   **Goals:** Secure a full-time software engineering role before graduation. Needs to connect with university alumni working at top tech companies.
+*   **Pain Points:** Feels immense anxiety about sending cold messages. Doesn't know the difference between sounding "professional" and "desperate." Currently tracks applications in a messy Excel spreadsheet that she forgets to update.
+*   **Behaviors:** Spends 2 hours a day scrolling LinkedIn Jobs but rarely applies. Copies and pastes the exact same generic message to every recruiter.
+*   **Motivations:** Wants a seamless, guided tool that tells her *what* to say and *when* to follow up so she can stop overthinking and start acting.
 
-### Behaviors & Workflows
-* Focuses heavily on finding university alumni working in private equity, investment banking, or corporate finance.
-* Attempts to schedule informational coffee chats rather than directly asking for jobs.
-* Reaches out to 3–5 alumni weekly but has difficulty maintaining communication over long periods.
-* Tracks his contacts on a basic spreadsheets file but struggles to manage follow-up cadences.
+## 2. The Internship Seeker (Secondary)
+**Name:** Arjun Mehta  
+**Profile:** 19 years old, Sophomore majoring in Business/Finance.  
 
-### Motivations
-* Wants to build a robust professional network before senior year.
-* Seeks mentorship and career advice from experienced alumni.
-* Aims to stand out early by showing genuine interest and career discipline.
+*   **Goals:** Land a competitive summer internship to build his resume. Needs to cast a very wide net.
+*   **Pain Points:** High rejection/ghosting rate. Does not have a lot of experience on his resume, so he relies heavily on his enthusiasm and eagerness to learn.
+*   **Behaviors:** Highly active on LinkedIn. Willing to reach out to 50+ people a week if it means getting one coffee chat.
+*   **Motivations:** Efficiency and speed. He wants to generate messages rapidly and track bulk outreach without getting lost in his own DMs.
 
-### Pain Points & Hurdles
-* **Professional Tone Deficit:** Unsure how to write emails that appeal to busy Wall Street professionals.
-* **Relationship Decay:** Forgets to check in with contacts periodically, making his networking feel transactional when he suddenly reaches out again.
-* **Context Loss:** Struggles to remember specific details from previous brief chats (e.g., favorite sports teams, career tips).
+## 3. The Recent Graduate / Pivot (Tertiary)
+**Name:** Emily Davis  
+**Profile:** 23 years old, graduated 6 months ago, trying to break into Product Management.  
+
+*   **Goals:** Overcome the "need experience to get experience" catch-22 by directly networking with hiring managers and senior PMs.
+*   **Pain Points:** Feeling discouraged after applying to 200+ roles on job portals with zero interviews. Needs highly tailored outreach to justify why her non-traditional background is an asset.
+*   **Behaviors:** Reaches out for "informational interviews" rather than asking directly for a job.
+*   **Motivations:** Quality over quantity. She needs the AI to generate deeply thoughtful, nuanced messages that reference the recruiter's specific company or recent posts.

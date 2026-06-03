@@ -1,90 +1,38 @@
-# 12-Month Product Roadmap
-
-## ConnectIQ — Student Outreach Assistant
-
-This document outlines the quarterly product development roadmap for **ConnectIQ**, detailing strategic objectives, deliverables, risk mitigations, and performance targets over a 12-month timeline.
+# Product Roadmap
+**Product:** ConnectIQ  
+**Timeline:** Q3 2026 - Q2 2027  
 
 ---
 
-## 1. Executive Summary
-The roadmap details a logical transition from **validation to scalability**:
-* **Q1 (MVP):** Validates the core CRM and AI generation value loops.
-* **Q2 (Optimization):** Enriches the user experience through discovery engines and analytics.
-* **Q3 (Integrations):** Drives efficiency through external calendar hooks and AI reply assistants.
-* **Q4 (Growth):** Drives low-cost user acquisition via viral referral loops and browser scrapers.
+## Phase 1: Foundation (Current MVP)
+**Goal:** Deliver the core networking loop and validate the product-market fit with early adopters.
 
-```
-       Q1: VALIDATION                 Q2: OPTIMIZATION
-       - Profile Context Setup        - Pre-populated Search Directory
-       - AI Outreach Generator        - Recruiter Notes Timeline
-       - Kanban Outreach Tracker      - Performance Analytics
-       - Overdue Follow-up Alert      - Message Tone Selectors
-                    |                       |
-                    +-----------+-----------+
-                                |
-       Q3: INTEGRATIONS                 Q4: SCALE & VIRALITY
-       - Google Calendar Sync         - Chrome Scraper Extension
-       - AI Reply Nudge Assistant     - Viral Referral K-Loops
-       - Custom Kanban Columns        - CSV Import/Export
-```
+*   **Authentication:** Secure registration/login using NextAuth.
+*   **Recruiter CRM:** Interactive Kanban board to visually track networking pipelines.
+*   **AI Message Generator:** Core AI integration to draft personalized LinkedIn/Email messages.
+*   **Profile Basics:** Simple user profile to capture target role and resume context.
+*   **Landing Page:** High-converting marketing page with clear value propositions.
 
----
+## Phase 2: Engagement & Insights (Next 3 Months)
+**Goal:** Increase user stickiness by providing actionable data and reducing onboarding friction.
 
-## 2. Quarterly Roadmap Details
+*   **Analytics Dashboard:** Visualizing response rates, weekly outreach velocity, and pipeline bottlenecks.
+*   **Resume Parsing UI:** Drag-and-drop resume upload that visually extracts key skills to feed the AI.
+*   **Basic Notifications:** In-app alerts reminding users when it's time to follow up with a recruiter.
+*   **Quick Actions:** Dropdown menus on CRM cards to rapidly generate follow-ups without leaving the board.
 
-### 2.1. Q1: MVP Launch & Core Value Validation
-* **Strategic Objective:** Validate the core customer loop (AI message drafting + visual pipeline tracking) and confirm baseline user engagement.
-* **Features Delivered:**
-  * User Profile Context Loader (Resume/Goal configuration).
-  * AI Outreach Generator (Supports LinkedIn and email templates).
-  * Kanban Board Tracker (5 columns: Wishlist, Contacted, Discussing, Interview, Closed).
-  * Native Follow-up Reminders (Badges indicating overdue tasks).
-  * Copy-to-Clipboard Action.
-* **User Problems Solved:** Alleviates writing blocks, prevents conversation decay, and replaces unorganized spreadsheet logs.
-* **Dependencies:** LLM API integration, browser LocalStorage availability.
-* **Risks:** The lack of automated LinkedIn messaging introduces friction, which could lead to copy-to-contact drop-offs.
-* **Success Metrics:** Profile completion rate `>85%`, Copy click-through `>70%`, Day 14 cohort retention `>45%`.
-* **North Star Metric Impact:** Establish a baseline of **1.5 successful recruiter conversations per active user per month**.
+## Phase 3: Automation & Scale (Next 6 Months)
+**Goal:** Eliminate manual data entry and scale the outreach process.
 
----
+*   **LinkedIn Chrome Extension:** A browser extension to automatically pull recruiter data (Name, Company, Headline) directly from LinkedIn into the ConnectIQ CRM with one click.
+*   **Follow-up Automation:** Intelligent sequencing that drafts follow-up messages automatically based on the time elapsed since the first contact.
+*   **Advanced Analytics:** Predictive insights (e.g., "You need to contact 15 more recruiters this week to hit your interview goal").
+*   **Template Library:** Users can save their best-performing AI outputs as reusable templates.
 
-### 2.2. Q2: Workflow Optimization & Discovery Enrichment
-* **Strategic Objective:** Decrease recruiter logging friction and improve target discovery pipelines.
-* **Features Delivered:**
-  * Pre-loaded Recruiter Search Directory (Fuzzy filtering by industry/location).
-  * Rich Recruiter Card Notes (History logging inside modals).
-  * Tone Selector toggles (Formal, Conversational, Direct).
-  * Analytics dashboard (Outreach volume graphs and conversion donut charts).
-* **User Problems Solved:** Solves the recruiter discovery gap and enables students to log interaction details.
-* **Dependencies:** Pre-seeded local directory database.
-* **Risks:** The pre-populated recruiter directory requires maintenance, as records can go stale.
-* **Success Metrics:** Weekly active board edits `>12.0 per user`, Search-to-pipeline track rate `>30%`.
-* **North Star Metric Impact:** Elevate conversations to **2.2 successful recruiter conversations per active user per month**.
+## Phase 4: Monetization & B2B Expansion (Future Vision)
+**Goal:** Build sustainable revenue streams and expand to institutional buyers.
 
----
-
-### 2.3. Q3: Third-Party Integration & Conversation Automation
-* **Strategic Objective:** Automate conversation follow-up schedules and interview calendar syncing.
-* **Features Delivered:**
-  * AI Reply Assistant (Reads recruiter response and suggests custom replies to secure interviews).
-  * Google Calendar Sync (Autosets follow-up check-ins and interviews to external calendars).
-  * Customizable board columns.
-* **User Problems Solved:** Helps students who are unsure how to reply to recruiter questions, and coordinates scheduling.
-* **Dependencies:** Google Calendar API OAuth approval, migration scripts for custom database structures.
-* **Risks:** Third-party OAuth setups can increase friction, leading to drop-offs in integration setup rates.
-* **Success Metrics:** Google Calendar sync rate `>40%`, AI Reply assistant usage `>50% of active discussions`.
-* **North Star Metric Impact:** Elevate conversations to **3.0 successful recruiter conversations per active user per month**.
-
----
-
-### 2.4. Q4: Growth, Extension, & Retention Virality
-* **Strategic Objective:** Scale user acquisition and accelerate viral growth loops.
-* **Features Delivered:**
-  * Chrome Scraper Extension (Scrapes recruiter name and title directly from LinkedIn profiles, syncs to ConnectIQ web app).
-  * Viral Referral Program (K-factor invitation engine built on free premium months).
-  * CSV data import/export.
-* **User Problems Solved:** Eliminates manual data entry when researching recruiters on LinkedIn.
-* **Dependencies:** Chrome Web Store developer approval.
-* **Risks:** LinkedIn UI changes can break DOM scrapers, requiring frequent extension code maintenance.
-* **Success Metrics:** Viral K-Factor `>1.15`, Monthly active user growth `>25%` month-over-month.
-* **North Star Metric Impact:** Maintain **3.5 successful recruiter conversations per active user per month**, while scaling monthly active users by 3x.
+*   **Premium Plans (B2C):** Subscription tiers for unlimited AI generation, advanced analytics, and priority support.
+*   **Team Features (B2B):** Workspaces for university career centers or bootcamps to track their entire cohort's networking efforts.
+*   **Enterprise Integrations:** Webhooks and API access to push data to external tools (e.g., Slack, Notion).
+*   **A/B Testing Engine:** Automatically test different outreach tones and track which variations yield higher response rates for specific industries.
